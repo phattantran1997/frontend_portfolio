@@ -1,0 +1,26 @@
+@import "/src/scss/variable";
+
+.title_main {
+  font-size: $font-md;
+  font-weight: 600;
+  line-height: 42px;
+}
+
+.title_sub {
+  font-size: $font-nor;
+  font-weight: 500;
+  line-height: 31px;
+}
+
+.title_item {
+  font-size: $font-sm;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.btn_style {
+  padding: 8px 16px;
+  border: solid 1px $color-purple;
+  font-size: $font-sm;
+  color: $color-white;
+}

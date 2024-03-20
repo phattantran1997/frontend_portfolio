@@ -1,0 +1,34 @@
+@import "../../../../scss/variable";
+
+.header_wrapper {
+  .header_content {
+    .header_logo {
+      .logo_wrapper {
+        .logo_icon {
+          color: $color-white;
+        }
+        h1 {
+          color: $color-white;
+        }
+      }
+    }
+    .header_navbar {
+      .navbar_wrapper {
+        .navbar_content {
+          .navbar_item {
+            a {
+              color: $color-light-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.headerScroll {
+  background-color: $color-white;
+  z-index: 999;
+  .header_wrapper {
+  }
+}

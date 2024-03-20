@@ -1,0 +1,23 @@
+@import "/src/scss/variable";
+@import "/src/scss/general";
+
+.project {
+  .left {
+    .title_sub {
+      color: $color-white;
+      span {
+        color: $color-purple;
+      }
+    }
+    .line {
+      background: $color-purple;
+    }
+  }
+  .right {
+    .showMore_btn {
+      font-size: $font-sm;
+      font-weight: 500;
+      color: $color-white;
+    }
+  }
+}

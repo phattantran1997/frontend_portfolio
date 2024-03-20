@@ -1,0 +1,21 @@
+@import "/src/scss/variable";
+@import "/src/scss/general";
+
+.aboutDetail {
+  .aboutDetail_header {
+    .title_sub {
+      color: $color-white;
+      span {
+        color: $color-purple;
+      }
+    }
+    .line {
+      background: $color-purple;
+    }
+  }
+  .aboutDetail_content {
+    .title_item {
+      color: $color-light-grey;
+    }
+  }
+}

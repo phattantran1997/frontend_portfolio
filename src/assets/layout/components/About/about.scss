@@ -1,0 +1,41 @@
+@import "/src/scss/variable";
+@import "/src/scss/general";
+
+.about {
+  .about_content {
+    .about_left {
+      .title_sub {
+        color: $color-white;
+        margin-bottom: 30px;
+      }
+      .title_main {
+        color: $color-white;
+        margin-bottom: 30px;
+        .title {
+          color: $color-purple;
+        }
+      }
+      .title_item {
+        color: $color-light-grey;
+        margin-bottom: 30px;
+        text-align: justify;
+      }
+    }
+    .about_right {
+      .avatar_wrapper {
+        .avatar {
+          z-index: 1;
+          width: 100%;
+        }
+        .avatar_logo {
+          top: 15%;
+        }
+        .avatar_dots {
+          bottom: 10%;
+          right: 10%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
