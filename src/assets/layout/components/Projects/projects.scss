@@ -17,7 +17,16 @@
     .showMore_btn {
       font-size: $font-sm;
       font-weight: 500;
-      color: $color-white;
+      color: $color-purple;
     }
+  }
+  .col-movies {
+    flex: 1;
+  }
+  .text-black {
+    color: $color-purple;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 31px;
   }
 }

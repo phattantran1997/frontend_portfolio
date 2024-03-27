@@ -11,7 +11,7 @@ const Skills = () => {
           <div className="skill_wrapper">
             <div className="skill_header w-2/3 flex items-center gap-2">
               <h2 className="title_sub">
-                <span className="pr-1 text-white">#</span>skills
+                <span className="pr-1 text-black">#</span>skills
               </h2>
               <div className="line w-2/3 h-px "></div>
             </div>

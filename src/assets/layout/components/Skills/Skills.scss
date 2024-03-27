@@ -4,7 +4,7 @@
 .skill {
   .skill_header {
     .title_sub {
-      color: $color-white;
+      color: $color-purple;
       span {
         color: $color-purple;
       }
@@ -15,25 +15,17 @@
   }
   .skill_content {
     .skill_item {
-      border: 1px solid $color-white;
+      border: 1px solid $color-purple;
       border-radius: 10px;
-      &:hover {
-        background-color: $color-white;
-        border-color: $color-purple;
-        .title_item {
-          color: black;
-          border: 1px solid black;
-          border-radius: 15px;
-        }
-      }
       .skill_title {
         color: $color-purple;
       }
       .title_item {
-        color: $color-white;
-        border: 1px solid $color-white;
-        border-radius: 15px;
+        color: black;
+          border: 1px solid black;
+          border-radius: 15px;
       }
     }
   }
+  
 }

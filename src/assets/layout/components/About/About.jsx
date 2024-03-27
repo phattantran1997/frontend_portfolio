@@ -1,8 +1,9 @@
-import avatar from "./images/avatar.png";
+import avatar from "./images/avatar2.png";
 import avatar_dots from "./images/avatar_dots.png";
 import avatar_logo from "./images/avatar_logo.png";
-import quote from "./images/steve_quote.jpg";
+import quote from "./images/test.jpeg";
 import "./about.scss";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -20,29 +21,19 @@ const About = () => {
                 <p className="title_item">
                 Meticulous Software Engineer with more 3 years of experience designing, testing, and developing software solutions. In- depth understanding of software architect technologies focusing on delivering innovative business solutions. Excels in fast-paced, high-energy and deadline-driven environments with a willingness to take on additional tasks.
                 </p>
-                <a href="" className="btn_style">
+                <NavLink to="/contact" className="btn_style">
                   Contact me!!
-                </a>
+                </NavLink>
               </div>
 
-              <div className="about_right w-2/5 relative">
+              <div className="about_right w-1/5 ">
                 <div className="avatar_wrapper">
-                  <img className="avatar relative" src={avatar} alt="avatar" />
-                  <img
-                    className="avatar_dots absolute"
-                    src={avatar_dots}
-                    alt="avatar_dots"
-                  />
-                  <img
-                    className="avatar_logo absolute"
-                    src={avatar_logo}
-                    alt="avatar_logo"
-                  />
+                  <img className="avatar " src={avatar} alt="avatar" />
                 </div>
               </div>
             </div>
             <div className="about_quote px-5 py-10">
-              <img width={300} className="mx-auto" src={quote} alt="quote" />
+              <img className="mx-auto" src={quote} alt="quote" />
             </div>
           </div>
         </div>
