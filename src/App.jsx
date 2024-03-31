@@ -1,6 +1,6 @@
 import Navbar from "./assets/layout/general/navbar/Navbar";
 import "./App.scss";
-import HomePage from "./assets/pages/HomePage";
+import HomePage from "./assets/layout/components/HomePage/HomePage";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import About from "./assets/layout/components/About/About";
 import Projects from "./assets/layout/components/Projects/ProjectsGithub";

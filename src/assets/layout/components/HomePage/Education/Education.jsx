@@ -4,7 +4,7 @@ import './Education.css'; // Import the CSS file for Education component
 const Education = () => {
   return (
     <div className="education-container">
-      <h2>Education and Training</h2>
+      <h1>Education and Training</h1>
       <div className="education-item">
         <h3>QUEENSLAND UNIVERSITY OF TECHNOLOGY (QUT) | Brisbane QLD</h3>
         <p>Master of Science in Information Technology (Grades: 6/7)</p>

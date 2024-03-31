@@ -17,6 +17,15 @@
     .skill_item {
       border: 1px solid $color-purple;
       border-radius: 10px;
+      &:hover {
+        background-color: plum;
+        border-color: $color-purple;
+        .title_item {
+          color: black;
+          border: 1px solid black;
+          border-radius: 15px;
+        }
+      }
       .skill_title {
         color: $color-purple;
       }
