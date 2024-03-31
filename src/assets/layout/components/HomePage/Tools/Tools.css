@@ -1,0 +1,24 @@
+.tools-container {
+  text-align: center;
+  background-color: rgba(197, 197, 197, 0.218);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+.content {
+  margin-top: 20px;
+}
+
+.content h2 {
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+}

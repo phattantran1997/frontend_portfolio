@@ -2,17 +2,8 @@
 @import "/src/scss/general";
 
 .skill {
-  .skill_header {
-    .title_sub {
-      color: $color-purple;
-      span {
-        color: $color-purple;
-      }
-    }
-    .line {
-      background: $color-purple;
-    }
-  }
+  padding-top: 50px;
+  padding-bottom: 50px;
   .skill_content {
     .skill_item {
       border: 1px solid $color-purple;

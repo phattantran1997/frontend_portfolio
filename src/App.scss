@@ -1,11 +1,13 @@
 @import "./scss/variable";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+
 svg {
-  display: block;
+	display: block;
 }
+
 .mainBg {
-  background-color: $bgColor-main;
+	background-color: $bgColor-main;
 }
 
 * {
@@ -62,7 +64,7 @@ nav {
 }
 
 .logo h1 {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 nav .nav-items {
@@ -172,14 +174,15 @@ nav .nav-items {
 
 .project-language {
 	font: size 12px;
-  text-align: center;
+	text-align: center;
 }
+
 .project-name {
-  text-align: center;
+	text-align: center;
 	font-size: 20px;
 	font-weight: 600;
 	color: #000;
-  font-weight: bold;
+	font-weight: bold;
 }
 
 
@@ -230,40 +233,51 @@ nav .nav-items {
 	font-weight: 600;
 	color: #000;
 }
+
 .card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
 }
 
 .skill_header {
-  .title_sub {
-    color: $color-purple;
-    span {
-      color: $color-purple;
-    }
-  }
-  .line {
-    background: $color-purple;
-  }
+	.title_sub {
+		color: $color-purple;
+
+		span {
+			color: $color-purple;
+		}
+	}
+
+	.line {
+		background: $color-purple;
+	}
 }
 
 .programming-language {
-  color: rgba(0, 0, 0, 0.87);
-  height: 32px;
-  cursor: default;
-  border: none;
-  display: inline-flex;
-  outline: none;
-  padding: 20px;
-  font-size: 0.8125rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  align-items: center;
-  border-radius: 16px;
-  justify-content: center;
-  text-decoration: none;
-  background-color: #e0e0e0;
-  margin-right: 10px;
-  margin-bottom: 10px;
+	color: rgba(0, 0, 0, 0.87);
+	height: 32px;
+	cursor: default;
+	border: none;
+	display: inline-flex;
+	outline: none;
+	padding: 20px;
+	font-size: 0.8125rem;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	align-items: center;
+	border-radius: 16px;
+	justify-content: center;
+	text-decoration: none;
+	background-color: #e0e0e0;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.title_header {
+	display: flex;
+	margin-bottom: 20px;
+	justify-content: center;
+	color: $color-redviolet;
+	font-size: 34px;
 }
