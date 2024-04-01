@@ -48,7 +48,7 @@ const Interests = () => {
   ];
 
   return (
-    <div>
+    <div className='interests-container'>
       <div className="title_header flex items-center">
         <h1>
           <span className="pr-1 text-black"></span>Interests

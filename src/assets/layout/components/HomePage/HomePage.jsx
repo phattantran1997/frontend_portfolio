@@ -1,5 +1,4 @@
 import About from "../About/About";
-import About_detail from "../About_detail/About_detail";
 import Projects from "../Projects/ProjectsGithub";
 import Education from "./Tools/Tools";
 import Experience from "./Experience/Experience";

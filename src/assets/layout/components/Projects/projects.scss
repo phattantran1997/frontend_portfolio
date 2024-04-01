@@ -2,31 +2,37 @@
 @import "/src/scss/general";
 
 .project {
-  .left {
-    .title_sub {
-      color: $color-white;
-      span {
-        color: $color-purple;
+  .search-container {
+    input,
+    select {
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $color-purple;
       }
     }
-    .line {
-      background: $color-purple;
+  }
+
+  .projects-container {
+    .card {
+      .project-name {
+        color: $color-black;
+      }
+
+      .project-language {
+        font-size: 0.9rem;
+      }
+
+      .project-description {
+        color: $color-black;
+      }
+
+      .btn {
+        display: inline-block;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
     }
-  }
-  .right {
-    .showMore_btn {
-      font-size: $font-sm;
-      font-weight: 500;
-      color: $color-purple;
-    }
-  }
-  .col-movies {
-    flex: 1;
-  }
-  .text-black {
-    color: $color-purple;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 31px;
   }
 }
