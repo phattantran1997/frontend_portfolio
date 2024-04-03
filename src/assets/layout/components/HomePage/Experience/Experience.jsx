@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Experience.scss';
 import premierductsLogo from './images/premierducts.png';
 import angularJs from './images/angularjs.png';
@@ -14,15 +14,47 @@ import { Fragment } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 const Experience = () => {
-  let [isOpen, setIsOpen] = useState(false)
-  function closeModal() {
-    setIsOpen(false)
-  }
+  const [experiences, setExperiences] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
-  function openModal(content) {
-    setIsOpen(true)
-  }
+  useEffect(() => {
+    fetchExperiences();
+  }, []);
 
+  const fetchExperiences = async () => {
+    try {
+      const response = await fetch('http://localhost:5146/api/Experiences');
+      const data = await response.json();
+      console.log(data);
+      setExperiences(data);
+    } catch (error) {
+      console.error('Error fetching experiences:', error);
+    }
+  };
+
+  const openModal = (experience) => {
+    setSelectedExperience(experience);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedExperience(null);
+  };
+
+  const getImagePath = (imageName) => {
+    if (imageName === 'premierductsLogo') return premierductsLogo;
+    else if (imageName === 'angularJs') return angularJs;
+    else if (imageName === 'csharp') return csharp;
+    else if (imageName === 'database') return database;
+    else if (imageName === 'java') return java;
+    else if (imageName === 'erp') return erp;
+    else if (imageName === 'projectengineer') return projectengineer;
+    else if (imageName === 'workIcon') return workIcon;
+    else if (imageName === 'education') return education;
+    else return null; // or you can return a default image path
+  };
 
   return (
     <div className='experience-container'>
@@ -32,175 +64,41 @@ const Experience = () => {
         </h1>
       </div>
       <VerticalTimeline lineColor={'black'} animate={true}>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: 'rgb(83, 178, 252)' }}
-          contentArrowStyle={{ borderRight: '7px solid  rgb(83, 178, 252)' }}
-          date="12/2023 - Today"
-          iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={projectengineer} alt="myLogo" className="icon-image" />
+        {experiences.map((experience) => (
+          <VerticalTimelineElement
+            key={experience.id}
+            className={`vertical-timeline-element--${experience.type.toLowerCase()}`}
+            contentStyle={{ background: 'rgb(83, 178, 252)' }}
+            contentArrowStyle={{ borderRight: '7px solid  rgb(83, 178, 252)' }}
+            date={experience.period}
+            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+            icon={
+              <div className="icon-image-container">
+                <img src={getImagePath(experience.image)} alt="myLogo" className="icon-image" />
+              </div>
+            }
+            onTimelineElementClick={() => openModal(experience)}
+          >
+            <div>
+              {experience.highlightSkills.split(',').map((skill) => (
+                <div key={skill} className="programming-language" role="button">
+                  <span>{skill.trim()}</span>
+                </div>
+              ))}
             </div>
-          }
-          onTimelineElementClick={() => openModal('abc')}
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>Leader</span>
-            </div>
-            <div className="programming-language" role="button">
-              <span>Business analysis</span>
-            </div>
-            <div className="programming-language " role="button">
-              <span>Project architect</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Project Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">PREMIERDUCTS | Heathwood, QLD</h4>
-          <p>Leadership, Agile, Client Collaboration, Project Management, Communication, Mentorship</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="12/2022 - 12/2023"
-          iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={csharp} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>.NET</span>
-            </div>
-            <div className="programming-language " role="button">
-              <span>Database</span>
-            </div>
-            <div className="programming-language" role="button">
-              <span>Angular JS</span>
-            </div>
-            <div className="programming-language " role="button">
-              <span>AWS</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">PREMIERDUCTS | Heathwood, QLD</h4>
-          <p>Software Development, Mobile Apps, Web Apps, Cross-functional, Testing, Continuous Improvement</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="12/2022 - 06/2023"
-          iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={database} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>.NET</span>
-            </div>
-            <div className="programming-language" role="button">
-              <span>Database</span>
-            </div>
-            <div className="programming-language " role="button">
-              <span>CI/CD</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">FPT SOFTWARE | Ho Chi Minh, Viet Nam</h4>
-          <p>Backend, Database Optimization, .NET, CI/CD, Code Reviews, Knowledge Sharing</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="09/2020 - 09/2021"
-          iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={java} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>Spring Boot</span>
-            </div>
-            <div className="programming-language" role="button">
-              <span>Database</span>
-            </div>
-            <div className="programming-language " role="button">
-              <span>CI/CD</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Backend Developer</h3>
-          <h4 className="vertical-timeline-element-subtitle">BEOWULF BLOCKCHAIN | Ho Chi Minh, Viet Nam</h4>
-          <p>Blockchain, RESTful APIs, Performance, Scalability, Architecture Design, Technical Insights</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="06/2019 - 08/2020"
-          iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={erp} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>1C Framework</span>
-            </div>
-            <div className="programming-language" role="button">
-              <span>ERP</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">1C INNOVATION | Ho Chi Minh, Viet Nam</h4>
-          <p>1C Framework, ERP, Customization, Technical Support, Product Enhancement, Client Collaboration</p>
-        </VerticalTimelineElement>
-        {/* education */}
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="Graduation time: 6/2025"
-          iconStyle={{ background: 'rgb(245, 0, 87)', color: 'rgb(255, 255, 255)' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={education} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>Grades: 6/7</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Master of Software Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">Queensland University of Technology (QUT)</h4>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="Graduated"
-          iconStyle={{ background: 'rgb(245, 0, 87)', color: 'rgb(255, 255, 255)' }}
-          icon={
-            <div className="icon-image-container">
-              <img src={education} alt="myLogo" className="icon-image" />
-            </div>
-          }
-        >
-          <div>
-            <div className="programming-language " role="button">
-              <span>Grades: 8.28/10</span>
-            </div>
-          </div>
-          <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-          <h4 className="vertical-timeline-element-subtitle">The University of Information Technology, or VNU-HCM University of Information Technology</h4>
-        </VerticalTimelineElement>
+            <h3 className="vertical-timeline-element-title">{experience.role}</h3>
+            <h4 className="vertical-timeline-element-subtitle">{experience.nameOfCompany}</h4>
+            <p>{experience.shortDescription}</p>
+          </VerticalTimelineElement>
+        ))}
       </VerticalTimeline>
-      <div>
-        <Transition appear show={isOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-10 overflow-y-auto"
+          onClose={closeModal}
+        >
+          <div className="min-h-screen px-4 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -210,51 +108,64 @@ const Experience = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div className="fixed inset-0 bg-black/25" />
+              <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
             </Transition.Child>
 
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
+            <span
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
+            >
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                <Dialog.Title
+                  as="h3"
+                  className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
-                    >
-                      Payment successful
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        Your payment has been successfully submitted. We’ve sent
-                        you an email with all of the details of your order.
+                  {selectedExperience?.role}
+                </Dialog.Title>
+                <div className="mt-4">
+                  {selectedExperience?.longDescription.split('.').map((sentence, index) => (
+                    <div key={index} className="flex items-start mb-2">
+                      <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span>
+                      <p className="text-sm text-gray-700">
+                        {sentence.trim().split('**').map((part, i) =>
+                          i % 2 === 0 ? (
+                            part
+                          ) : (
+                            <span key={i} className="font-bold">
+                              {part.replace(/\*\*/g, '')}
+                            </span>
+                          )
+                        )}
                       </p>
                     </div>
+                  ))}
+                </div>
 
-                    <div className="mt-4">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeModal}
-                      >
-                        Got it, thanks!
-                      </button>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
+                <div className="mt-4">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    onClick={closeModal}
+                  >
+                    Got it, thanks!
+                  </button>
+                </div>
               </div>
-            </div>
-          </Dialog>
-        </Transition>
-
-      </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
   );
 };

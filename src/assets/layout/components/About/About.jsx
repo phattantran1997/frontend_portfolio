@@ -1,45 +1,71 @@
-import avatar from "./images/avatar2.png";
-import avatar_dots from "./images/avatar_dots.png";
-import avatar_logo from "./images/avatar_logo.png";
-import quote from "./images/test.jpeg";
-import "./about.scss";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const highlightLocations = [
+    {
+        latlong: [11.317672897338083, 106.09275270467124],
+        description: "House of Governor Nguyen Van Kien"
+    }, {
+        latlong: [16.461109, 107.570183],
+        description: "Huế, Thua Thien Hue, Vietnam"
+    },
+    {
+        latlong: [21.033333, 105.849998],
+        description: "Hanoi, Hoan Kiem District, Hanoi, Vietnam"
+    },
+    {
+        latlong: [16.047079, 108.206230],
+        description: "Da Nang, Vietnam"
+    },
+    {
+        latlong: [22.356464, 103.873802],
+        description: "Sa Pa, Lào Cai, Vietnam"
+    },
+    {
+        latlong: [9.824959, 105.125893],
+        description: "Kien Giang, Vietnam"
+    },
+    {
+        latlong: [13.736717, 100.523186],
+        description: "Bangkok, Thailand"
+    }
+]
 const About = () => {
-  return (
-    <>
-      <div className="about pt-20">
-        <div className="container mx-auto">
-          <div className="about_wrapper">
-            <div className="about_content flex justify-between items-center">
-              <div className="about_left w-3/5 pr-20">
-                <h5 className="title_sub">Welcome!</h5>
-                <h3 className="title_main">
-                  I am <span>a </span>
-                  <span className="title">Software Engineer</span>
-                </h3>
-                <p className="title_item">
-                Meticulous Software Engineer with more 3 years of experience designing, testing, and developing software solutions. In- depth understanding of software architect technologies focusing on delivering innovative business solutions. Excels in fast-paced, high-energy and deadline-driven environments with a willingness to take on additional tasks.
-                </p>
-                <NavLink to="/contact" className="btn_style">
-                  Contact me!!
-                </NavLink>
-              </div>
-
-              <div className="about_right w-1/5 ">
-                <div className="avatar_wrapper">
-                  <img className="avatar " src={avatar} alt="avatar" />
+    return (
+        <div className="pt-20">
+            <div className="container mx-auto">
+                <div className="title_header flex items-center">
+                    <h1>
+                        <span className="pr-1 text-black"></span>What places I tripped
+                        <FontAwesomeIcon icon={faPlane} style={{ marginLeft: '8px' }} />
+                        <FontAwesomeIcon icon={faPlane} style={{ marginLeft: '8px' }} />
+                        <FontAwesomeIcon icon={faPlane} style={{ marginLeft: '8px' }} />
+                    </h1>
                 </div>
-              </div>
+                <div style={{ height: '700px' }}>
+                    <MapContainer center={[16.461109, 107.570183]} zoom={5} scrollWheelZoom={true} style={{ height: '100%', width: '100%' }}>
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        {highlightLocations.map((location) => (
+                            <>
+                                <Marker position={location.latlong}>
+                                    <Popup>
+                                        {location.description}
+                                    </Popup>
+                                </Marker>
+                            </>
+                        ))}
+                    </MapContainer>
+                </div>
             </div>
-            <div className="about_quote px-5 py-10">
-              <img className="mx-auto" src={quote} alt="quote" />
-            </div>
-          </div>
         </div>
-      </div>
-    </>
-  );
-};
+
+    );
+}
 
 export default About;
