@@ -1,0 +1,25 @@
+.publication-container {
+    max-width: 100%; /* Adjust this value as needed */
+    margin: 0 auto;
+  }
+  
+  .publication-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    max-width: 400px;
+    text-align: center;
+    width: 100%; /* Adjust this value as needed */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
+  
+  .publication-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .publication-details {
+    padding: 10px;
+  }

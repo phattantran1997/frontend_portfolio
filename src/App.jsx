@@ -7,6 +7,7 @@ import Projects from "./assets/layout/components/Projects/ProjectsGithub";
 import ProjectDetail from "./assets/layout/components/Project_detail/Project_detail";
 import { Suspense } from "react";
 import Contact from "./assets/layout/components/Contact/Contact";
+import Publication from "./assets/layout/components/Publication/Publications";
 function App() {
   return (
 
@@ -18,7 +19,8 @@ function App() {
 					<Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:projectId" element={<ProjectDetail />} />
+          <Route path="/publication" element={<Publication />} />
+          <Route path="/projects/:projectName" element={<ProjectDetail />} />
           <Route path="/" element={<HomePage />} />
 
 				</Routes>

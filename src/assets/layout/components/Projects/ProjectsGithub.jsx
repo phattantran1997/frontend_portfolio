@@ -26,8 +26,8 @@ const Projects = () => {
             },
           }
         );
-        console.log(result.data);
         setProjectList(result.data);
+        console.log(result.data);
       } catch (error) {
         console.error("Error fetching GitHub repositories:", error);
       }
@@ -45,6 +45,10 @@ const Projects = () => {
         : false;
     return searchCriteria;
   });
+
+  const handleViewDetail = (projectURL) => {
+    window.open(projectURL, "_blank");
+  };
 
   return (
     <div className="project pt-20">
@@ -94,11 +98,18 @@ const Projects = () => {
                     </div>
                     <p className="project-description mb-4">{project.description || "No description provided."}</p>
                   </div>
-                  <Link to={`/projects/${project.id}`}>
+                  {/* <Link to={`/projects/${project.name}`}>
                     <div className="btn bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors">
                       View Details
                     </div>
-                  </Link>
+                  </Link> */}
+
+                  <button
+                    className="btn bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors"
+                    onClick={() => handleViewDetail(project.html_url)}
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             ))

@@ -68,8 +68,8 @@ const Experience = () => {
           <VerticalTimelineElement
             key={experience.id}
             className={`vertical-timeline-element--${experience.type.toLowerCase()}`}
-            contentStyle={{ background: 'rgb(83, 178, 252)' }}
-            contentArrowStyle={{ borderRight: '7px solid  rgb(83, 178, 252)' }}
+            contentStyle={{ background: experience.period.includes('Today') ? 'rgb(83, 178, 252)' : 'rgb(255, 255, 255)' }}
+            contentArrowStyle={{ borderRight: experience.period.includes('Today') ? '7px solid rgb(83, 178, 252)' : '7px solid rgb(255, 255, 255)' }}
             date={experience.period}
             iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
             icon={
