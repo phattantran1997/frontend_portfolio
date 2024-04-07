@@ -220,9 +220,6 @@ const About = () => {
                         </h2>
                     </div>
                     <p>
-                        <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> While my passion for software engineering drives me professionally, my love for travel and exploring new cultures is equally profound. From a young age, I've been fascinated by the world's diversity and have seized every opportunity to embark on incredible journeys.
-                    </p>
-                    <p>
                         <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> My travels have taken me to some of the most breathtaking destinations across the globe, each offering a unique perspective and enriching my life with unforgettable experiences. Join me as I reminisce about the places I've visited and the adventures I've embarked upon.
                     </p>
                     <div style={{ height: '700px' }}>

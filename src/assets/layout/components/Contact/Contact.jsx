@@ -52,7 +52,7 @@ const ContactForm = () => {
             </p>
             <p>My email: phattantran123@gmail.com</p>
           </div>
-          <form onSubmit={handleSubmit} method="POST">
+          <form action="https://public.herotofu.com/v1/fe11d620-f23e-11ee-80b5-8ff215fec458" method="post" accept-charset="UTF-8" >
             <div className="pt-0 mb-3">
               <input
                 type="text"
