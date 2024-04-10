@@ -16,7 +16,7 @@ const Navbar = () => {
     };
   }, [navbarClass]);
   return (
-    <div className={navbarClass + " fixed top-0 left-0 right-0"}>
+    <div className={navbarClass + " fixed top-0 left-0 right-0 z-50"}>
       <nav>
         <div className="nav-items container">
           <div className="logo">

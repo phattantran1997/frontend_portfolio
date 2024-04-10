@@ -63,7 +63,7 @@ const Experience = () => {
           <span className="pr-1 text-black"></span>Work Experiences & Educations
         </h1>
       </div>
-      <VerticalTimeline lineColor={'black'} animate={true}>
+      <VerticalTimeline className="position-relative" lineColor={'black'} animate={true}>
         {experiences.map((experience) => (
           <VerticalTimelineElement
             key={experience.id}
