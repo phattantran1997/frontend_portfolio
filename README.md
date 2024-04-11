@@ -7,16 +7,16 @@ This React application serves as a personal portfolio website, showcasing my ski
 Contributions to the development of this application are welcome. If you find any issues or have suggestions for improvements, please follow these steps:
 
 1. Fork the repository
-2. Create a new branch: `git checkout -b my-new-feature`
+2. Create a new branch: `git checkout -b your-feauture`
 3. Make your changes and commit them: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+4. Push to the branch: `git push origin your-branch`
 5. Submit a pull request
 
 ## Features
 - **Homepage**: Displays a short description of my experiments, skills, and hobbies.
 - **Projects Tab**: Shows all outstanding GitHub projects and integrates a search function by project name or programming language using the GitHub APIs.
 - **About Tab**:
-  - Incorporates a Maps API to showcase all my travel destinations.
+  - I incorporate a Maps API to showcase all my travel destinations.
   - Fetches and displays my Instagram posts using the Instagram API.
 - **Blogs Tab**: Retrieves and showcases my blogs using the Notion API.
 - **About Tab**: Includes a contact form that allows visitors to send queries directly to my email.
@@ -25,6 +25,7 @@ Contributions to the development of this application are welcome. If you find an
 This project relies on the following dependencies:
 
 - React
+- VITE
 - React Router
 - Axios (for API requests)
 - GitHub API (for fetching GitHub projects)
