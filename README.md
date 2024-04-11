@@ -1,4 +1,3 @@
-```markdown
 # My Portfolio Website
 
 ## Purpose
