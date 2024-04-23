@@ -1,0 +1,32 @@
+// ProjectDetail.scss
+.project-detail {
+    .card {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+  
+      .project-language {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+      }
+  
+      .project-description {
+        color: #4b5563;
+        margin-bottom: 1rem;
+      }
+  
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #6d28d9;
+        }
+      }
+    }
+  }

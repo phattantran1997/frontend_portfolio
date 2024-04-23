@@ -244,17 +244,6 @@ const About = () => {
                         </MapContainer>
                     </div>
                 </section>
-
-                <div className="title_header flex items-center">
-                    <h2 className="text-3xl font-bold mb-4">
-                        My GYM Adventures
-                        <FontAwesomeIcon icon={faWeight} style={{ marginLeft: '8px' }} />
-                        <FontAwesomeIcon icon={faWeight} style={{ marginLeft: '8px' }} />
-                        <FontAwesomeIcon icon={faWeight} style={{ marginLeft: '8px' }} />
-                    </h2>
-                </div>
-
-
             </div>
         </div>);
 };

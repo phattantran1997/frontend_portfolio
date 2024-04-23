@@ -3,13 +3,14 @@ import { Octokit } from "@octokit/rest";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./projects.scss";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { faCodeBranch, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterBy, setFilterBy] = useState("name");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getListProjectFromGitHub() {
@@ -46,8 +47,11 @@ const Projects = () => {
     return searchCriteria;
   });
 
-  const handleViewDetail = (projectURL) => {
-    window.open(projectURL, "_blank");
+  const handleViewDetail = (projectId) => {
+    const filteredProject = projectList.find((project) => project.id === projectId);
+    if (filteredProject) {
+      navigate(`/projects/${projectId}`, { state: { projectDetails: filteredProject } });
+    }
   };
 
   return (
@@ -98,7 +102,7 @@ const Projects = () => {
                     </div>
                     <p className="project-description mb-4">{project.description || "No description provided."}</p>
                   </div>
-                  {/* <Link to={`/projects/${project.name}`}>
+                  {/* <Link to={`/projects/${project.id}`}>
                     <div className="btn bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors">
                       View Details
                     </div>
@@ -106,7 +110,7 @@ const Projects = () => {
 
                   <button
                     className="btn bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors"
-                    onClick={() => handleViewDetail(project.html_url)}
+                    onClick={() => handleViewDetail(project.id)}
                   >
                     View Details
                   </button>
