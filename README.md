@@ -39,7 +39,11 @@ To install the dependencies, navigate to the project directory and run:
 ```bash
 npm install
 ```
+After install all related dependency, run project with command:
 
+```bash
+npm run dev
+```
 ## Architecture
 The application follows a client-server architecture, with the React frontend communicating with a backend API. The backend API acts as a proxy to map external APIs with the frontend.
 
