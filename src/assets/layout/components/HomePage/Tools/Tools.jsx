@@ -1,5 +1,5 @@
 import React from 'react';
-import './Tools.css'; // Import the CSS file for styling
+import './Tools.scss'; // Import the CSS file for styling
 
 const Tools = () => {
   return (

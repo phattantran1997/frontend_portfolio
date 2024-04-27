@@ -160,7 +160,7 @@ const About = () => {
                 <section className="mb-20">
                     <div className="title_header flex items-center">
                         <h2 className="text-3xl font-bold mb-4">
-                            My Instagram Daily Blogs
+                            My Instagram Daily Posts
                             <FontAwesomeIcon icon={faInstagram} style={{ marginLeft: '8px' }} />
                             <FontAwesomeIcon icon={faInstagram} style={{ marginLeft: '8px' }} />
                             <FontAwesomeIcon icon={faInstagram} style={{ marginLeft: '8px' }} />

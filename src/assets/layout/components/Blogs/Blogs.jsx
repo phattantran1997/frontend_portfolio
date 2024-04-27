@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './Blogs.scss';
 
-const Post = () => {
+const Blogs = () => {
   const [pages, setPages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const notionBlocksUrl = 'http://localhost:5146/api/Post';
+  const notionBlocksUrl = 'http://localhost:5146/api/Blog/notion';
 
   useEffect(() => {
     const fetchPages = async () => {
@@ -14,44 +15,44 @@ const Post = () => {
         }
         const data = await response.json();
         setPages(data);
-        setLoading(false); // Set loading to false after receiving the response
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
       }
     };
-
     fetchPages();
   }, []);
 
   return (
-    <div className='container pt-20'>
+    <div className="container pt-20">
       <h2 className="title_header text-3xl font-bold mb-4">My Notion Blogs</h2>
-      {loading && <p>Loading...</p>}
+      {loading && <p className="loading">Loading...</p>}
       {!loading && (
-        <ol>
+        <ul className="Blogs-list">
           {pages.map((page, index) => (
-            <li key={page.requestId} style={{ marginBottom: '10px' }}>
-              <div style={{ alignItems: 'center' }}>
-                <div >
-                  <a href={page.publicUrl}><b>{index + 1}. {page.properties?.title?.title?.[0]?.plainText || 'Untitled'}</b></a>
+            <li key={page.requestId} className="Blogs-item">
+              <div className="Blogs-content">
+                <div className="Blogs-title">
+                  <a href={page.publicUrl}>
+                    <h3>{index + 1}. {page.properties?.title?.title?.[0]?.plainText || 'Untitled'}</h3>
+                  </a>
                   {/* Add any other information/description here */}
                 </div>
                 {page.cover?.external?.url && (
-                  <div style={{paddingTop: '30px'}}>
-                    <a href={page.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100px', height: '100px', overflow: 'hidden' }}>
-                      <img src={page.cover.external.url} alt="Cover" style={{ width: '75%', height: '75%' }} />
+                  <div className="Blogs-cover">
+                    <a href={page.url} target="_blank" rel="noopener noreferrer">
+                      <img src={page.cover.external.url} alt="Cover" />
                     </a>
                   </div>
                 )}
               </div>
             </li>
           ))}
-        </ol>
+        </ul>
       )}
     </div>
   );
-  
 };
 
-export default Post;
+export default Blogs;

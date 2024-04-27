@@ -42,6 +42,23 @@ const Skills = () => {
             </li>
             <li className="skill_item mb-10 py-3 px-5 flex items-center gap-1">
               <span className="skill_title title_sub pr-2">
+                <FontAwesomeIcon className="mr-1" icon={faReact} />
+                REACTJS
+              </span>
+              <span className="title_item  mx-1 px-4 py-1">
+                ReactJs Basic
+              </span>
+              <span className="title_item  mx-1 px-4 py-1">
+                React Router
+              </span>
+              <span className="title_item  mx-1 px-4 py-1">
+                React Redux
+              </span>
+              <span className="title_item  mx-1 px-4 py-1">React Hook</span>
+              <span className="title_item  mx-1 px-4 py-1">Antd</span>
+            </li>
+            <li className="skill_item mb-10 py-3 px-5 flex items-center gap-1">
+              <span className="skill_title title_sub pr-2">
                 <FontAwesomeIcon className="mr-1" icon={faCode} />
                 HTML/CSS
               </span>

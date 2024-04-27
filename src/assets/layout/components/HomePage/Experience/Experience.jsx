@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import './Experience.scss';
 import premierductsLogo from './images/premierducts.png';
 import angularJs from './images/angularjs.png';
@@ -11,7 +13,7 @@ import workIcon from './images/work.png';
 import education from './images/education.png';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+
 
 const Experience = () => {
   const [experiences, setExperiences] = useState([]);

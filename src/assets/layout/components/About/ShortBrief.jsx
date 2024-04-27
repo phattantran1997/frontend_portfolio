@@ -4,6 +4,8 @@ import avatar_logo from "./images/avatar_logo.png";
 import quote from "./images/test.jpeg";
 import "./about.scss";
 import { NavLink } from "react-router-dom";
+import resume from './images/Lincoln_Tran_Resume.pdf'; // Import your PDF file here
+
 
 const ShortBrief = () => {
   return (
@@ -24,6 +26,9 @@ const ShortBrief = () => {
                 <NavLink to="/contact" className="btn_style">
                   Contact me!!
                 </NavLink>
+                <a href={resume} download className="btn_style">
+                  Download my Resume
+                </a>
               </div>
 
               <div className="about_right w-1/5 ">

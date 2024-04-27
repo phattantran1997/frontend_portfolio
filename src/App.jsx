@@ -8,7 +8,7 @@ import ProjectDetail from "./assets/layout/components/Project_detail/Project_det
 import { Suspense } from "react";
 import Contact from "./assets/layout/components/Contact/Contact";
 import Publication from "./assets/layout/components/Publication/Publications";
-import Post from "./assets/layout/components/Post/Post";
+import Post from "./assets/layout/components/Blogs/Blogs";
 function App() {
   return (
 

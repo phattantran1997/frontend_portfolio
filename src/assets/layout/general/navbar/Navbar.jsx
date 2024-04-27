@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import './Navbar.scss';
 const Navbar = () => {
   const [navbarClass, setNavbarClass] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
+
   const handleScroll = (navbarClass) => {
     if (navbarClass !== "headerScroll" && window.pageYOffset >= 50) {
       setNavbarClass("headerScroll");
@@ -15,8 +18,13 @@ const Navbar = () => {
       handleScroll(navbarClass);
     };
   }, [navbarClass]);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
-    <div className={navbarClass + " fixed top-0 left-0 right-0 z-50"}>
+    <div className={`${navbarClass} fixed top-0 left-0 right-0 z-50`}>
       <nav>
         <div className="nav-items container">
           <div className="logo">
@@ -24,26 +32,40 @@ const Navbar = () => {
               <h1>Tan Phat (Lincoln){"'"}s Portfolio</h1>
             </a>
           </div>
-          <ul className="navbar_content flex justify-evenly">
-            <li >
-              <NavLink to="/">Home</NavLink>
+          <div className="navbar-toggle" onClick={toggleMenu}>
+            <i className={`fas fa-${showMenu ? "times" : "bars"}`}></i>
+          </div>
+          <ul className={`navbar_content ${showMenu ? "show" : ""}`}>
+            <li>
+              <NavLink to="/" onClick={toggleMenu}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/projects">Projects</NavLink>
-            </li>
-            <li >
-              <NavLink to="/publication ">Publications</NavLink>
-            </li>
-            <li >
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/projects" onClick={toggleMenu}>
+                Projects
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/post">Posts</NavLink>
+              <NavLink to="/publication" onClick={toggleMenu}>
+                Publications
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/about" onClick={toggleMenu}>
+                About
+              </NavLink>
             </li>
-          
+            <li>
+              <NavLink to="/post" onClick={toggleMenu}>
+                Posts
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" onClick={toggleMenu}>
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
