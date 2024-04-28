@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { faBlog, faMusic, faPlane, faSpoon, faWeight } from '@fortawesome/free-solid-svg-icons';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { Octokit } from "@octokit/rest";
 import axios from "axios";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const highlightLocations = [
     {
         latlong: [11.317672897338083, 106.09275270467124],
@@ -22,7 +22,9 @@ const highlightLocations = [
     },
     {
         latlong: [16.047079, 108.206230],
-        description: "Da Nang, Vietnam"
+        description: "Da Nang, Vietnam",
+        image: "https://www.shutterstock.com/image-photo/aerial-view-golden-bridge-lifted-600nw-1343264873.jpg"
+
     },
     {
         latlong: [22.356464, 103.873802],
@@ -130,6 +132,7 @@ const About = () => {
                 setPosts(response.data.data);
             } catch (error) {
                 console.error('Error fetching posts:', error.message);
+                toast.error('Error fetching posts ' + error.message);
             }
         };
 
@@ -245,6 +248,7 @@ const About = () => {
                     </div>
                 </section>
             </div>
+            <ToastContainer />
         </div>);
 };
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Publication.scss';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Publication = () => {
     const [publications, setPublications] = useState([]);
     const [imageUrls, setImageUrls] = useState([]);
@@ -14,6 +15,8 @@ const Publication = () => {
                 preloadImages(response.data); // Preload images once publications are fetched
             } catch (error) {
                 console.error('Error fetching publications:', error);
+                toast.error('The api server is not working. Please check server again, Error: ' + error.message);   
+
             }
         };
 
@@ -57,6 +60,7 @@ const Publication = () => {
                     ))}
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

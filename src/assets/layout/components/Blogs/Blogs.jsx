@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Blogs.scss';
+import { faCodeBranch, faStar } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Blogs = () => {
   const [pages, setPages] = useState([]);
@@ -18,6 +22,7 @@ const Blogs = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
+        toast.error('The api server is not working. Please check server again. Error: ' + error.message);
         setLoading(false);
       }
     };
@@ -50,6 +55,7 @@ const Blogs = () => {
           ))}
         </ul>
       )}
+      <ToastContainer />
     </div>
   );
 };

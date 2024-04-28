@@ -13,27 +13,32 @@ import workIcon from './images/work.png';
 import education from './images/education.png';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Experience = () => {
   const [experiences, setExperiences] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
 
-  useEffect(() => {
-    fetchExperiences();
-  }, []);
 
   const fetchExperiences = async () => {
     try {
       const response = await fetch('http://localhost:5146/api/Experiences');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const data = await response.json();
       console.log(data);
       setExperiences(data);
     } catch (error) {
       console.error('Error fetching experiences:', error);
+      toast.error('The api server is not working. Please check server again, Error: ' + error.message);
     }
   };
+  useEffect(() => {
+    fetchExperiences();
+  }, []);
 
   const openModal = (experience) => {
     setSelectedExperience(experience);
@@ -168,6 +173,7 @@ const Experience = () => {
           </div>
         </Dialog>
       </Transition>
+      <ToastContainer /> 
     </div>
   );
 };

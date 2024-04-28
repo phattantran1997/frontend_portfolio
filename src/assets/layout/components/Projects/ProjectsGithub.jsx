@@ -5,6 +5,8 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./projects.scss";
 import { Link,useNavigate} from "react-router-dom";
 import { faCodeBranch, faStar } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
@@ -31,6 +33,7 @@ const Projects = () => {
         console.log(result.data);
       } catch (error) {
         console.error("Error fetching GitHub repositories:", error);
+        toast.error('The api return error: '+ error.message);
       }
     }
 
@@ -120,6 +123,7 @@ const Projects = () => {
           )}
         </div>
       </div>
+      <ToastContainer /> 
     </div>
   );
 };
