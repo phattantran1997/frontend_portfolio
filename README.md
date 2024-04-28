@@ -40,7 +40,7 @@ To install the dependencies, navigate to the project directory and run:
 npm install
 ```
 
-## Architecture
+## How to run project? 
 The application follows a client-server architecture, with the React frontend communicating with a backend API. The backend API acts as a proxy to map external APIs with the frontend.
 
 The backend API is implemented using ASP.NET Core and is hosted separately. Follow these steps to set up the backend:
