@@ -37,7 +37,6 @@ const Blogs = () => {
                   <a href={page.publicUrl}>
                     <h3>{index + 1}. {page.properties?.title?.title?.[0]?.plainText || 'Untitled'}</h3>
                   </a>
-                  {/* Add any other information/description here */}
                 </div>
                 {page.cover?.external?.url && (
                   <div className="Blogs-cover">

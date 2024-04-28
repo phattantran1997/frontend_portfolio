@@ -9,7 +9,7 @@
 
 .experience-item {
   display: flex;
-  align-items: flex-start; /* Align items at the start */
+  align-items: flex-start;
   background-color: #f9f9f9;
   padding: 20px;
   margin-bottom: 20px;
@@ -18,7 +18,7 @@
 }
 
 .company-logo {
-  width: 25%; /* Adjust the size as needed */
+  width: 25%; 
   margin-right: 20px;
 }
 
@@ -39,7 +39,7 @@
 .experience-item ul {
   margin-top: 5px;
   padding-left: 20px;
-  list-style-type: disc; /* Add disc style for list items */
+  list-style-type: disc;
 }
 
 .experience-item li {
@@ -48,8 +48,8 @@
 
 .icon-image-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
   width: 100%;
   height: 100%;
 }
