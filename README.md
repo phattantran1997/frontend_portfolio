@@ -39,11 +39,7 @@ To install the dependencies, navigate to the project directory and run:
 ```bash
 npm install
 ```
-After install all related dependency, run project with command:
 
-```bash
-npm run dev
-```
 ## Architecture
 The application follows a client-server architecture, with the React frontend communicating with a backend API. The backend API acts as a proxy to map external APIs with the frontend.
 
@@ -54,8 +50,22 @@ The backend API is implemented using ASP.NET Core and is hosted separately. Foll
 3. Open the `appsettings.Development.json` file and edit the connection string and Notion API key accordingly.
 4. Build and run the backend API using your preferred method (e.g., Visual Studio, `dotnet run`, etc.).
 
-Once the backend API is running, you can start the React development server by running `npm run dev` in the project directory. The application will be accessible at [http://localhost:5173/](http://localhost:5173/).
+Once the backend API is running, you can start the React development server by following instruction:
+1. Install dependency:
+```bash
+npm install
+```
+2. Add file .env in your root project with these structures:
+VITE_GIT_HUB_ACCESS_TOKEN="your GitHub token"
+VITE_GIT_HUB_ACCOUNT="your GitHub account"
+VITE_INSTAGRAM_ACCESS_TOKEN="your Instagram token"
+VITE_NOTION_ACCESS_TOKEN="your Notion token"
 
+3. After all, you can run project with command: 
+```bash
+npm run dev
+```
+The application will be accessible at [http://localhost:5173/](http://localhost:5173/).
 ## Reporting Issues
 If you encounter any issues or bugs with the application, please report them by creating a new issue in the GitHub repository. Provide detailed information about the issue, including steps to reproduce it, if possible. Screenshots or error messages are also helpful.
 ```
