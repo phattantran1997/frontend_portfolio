@@ -56,12 +56,13 @@ Once the backend API is running, you can start the React development server by f
 npm install
 ```
 2. Add file .env in your root project with these structures:
+
 VITE_GIT_HUB_ACCESS_TOKEN="your GitHub token"
 VITE_GIT_HUB_ACCOUNT="your GitHub account"
 VITE_INSTAGRAM_ACCESS_TOKEN="your Instagram token"
 VITE_NOTION_ACCESS_TOKEN="your Notion token"
 
-3. After all, you can run project with command: 
+5. After all, you can run project with command: 
 ```bash
 npm run dev
 ```
