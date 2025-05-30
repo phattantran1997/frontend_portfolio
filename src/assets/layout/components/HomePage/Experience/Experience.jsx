@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import './Experience.scss';
-import premierductsLogo from './images/premierducts.png';
-import angularJs from './images/angularjs.png';
-import csharp from './images/c-sharp.png';
-import database from './images/database.png';
-import java from './images/java.png';
-import erp from './images/erp.png';
-import projectengineer from './images/projectengineer.png';
-import workIcon from './images/work.png';
-import education from './images/education.png';
+import teachingIcon from './images/employments/teaching.png';
+import researchIcon from './images/employments/research.png';
+import projectEngineerIcon from './images/employments/project_engineer.png';
+import softwareEngineerIcon from './images/employments/software_engineer.png';
+import backendIcon from './images/employments/backend.png';
+import blockchainIcon from './images/employments/blockchain.png';
+import erpIcon from './images/employments/erp.png';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import experienceData from './experience.json';
 
 const Experience = () => {
-  const [experiences, setExperiences] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
 
-
-  const fetchExperiences = async () => {
-    try {
-      const response = await fetch('http://localhost:5146/api/Experiences');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      console.log(data);
-      setExperiences(data);
-    } catch (error) {
-      console.error('Error fetching experiences:', error);
-      toast.error('The api server is not working. Please check server again, Error: ' + error.message);
+  const getImagePath = (experience) => {
+    switch (experience.role) {
+      case 'Sessional Practical Teaching':
+        return teachingIcon;
+      case 'Research Engineering':
+        return researchIcon;
+      case 'Project Engineer':
+        return projectEngineerIcon;
+      case 'Software Engineer':
+        if (experience.nameOfCompany === 'Premier Ducts') return softwareEngineerIcon;
+        if (experience.nameOfCompany === 'FPT Software') return backendIcon;
+        if (experience.nameOfCompany === '1C Innovation') return erpIcon;
+        break;
+      case 'Backend Developer':
+        return blockchainIcon;
+      default:
+        return null;
     }
   };
   useEffect(() => {
@@ -50,19 +50,6 @@ const Experience = () => {
     setSelectedExperience(null);
   };
 
-  const getImagePath = (imageName) => {
-    if (imageName === 'premierductsLogo') return premierductsLogo;
-    else if (imageName === 'angularJs') return angularJs;
-    else if (imageName === 'csharp') return csharp;
-    else if (imageName === 'database') return database;
-    else if (imageName === 'java') return java;
-    else if (imageName === 'erp') return erp;
-    else if (imageName === 'projectengineer') return projectengineer;
-    else if (imageName === 'workIcon') return workIcon;
-    else if (imageName === 'education') return education;
-    else return null; // or you can return a default image path
-  };
-
   return (
     <div className='experience-container'>
       <div className="title_header flex items-center">
@@ -70,18 +57,18 @@ const Experience = () => {
           <span className="pr-1 text-black"></span>Work Experiences & Educations
         </h1>
       </div>
-      <VerticalTimeline className="position-relative" lineColor={'black'} animate={true}>
-        {experiences.map((experience) => (
+      <VerticalTimeline className="position-relative" lineColor={'#000'} animate={true}>
+        {experienceData.experiences.map((experience) => (
           <VerticalTimelineElement
             key={experience.id}
             className={`vertical-timeline-element--${experience.type.toLowerCase()}`}
-            contentStyle={{ background: experience.period.includes('Today') ? 'rgb(83, 178, 252)' : 'rgb(255, 255, 255)' }}
-            contentArrowStyle={{ borderRight: experience.period.includes('Today') ? '7px solid rgb(83, 178, 252)' : '7px solid rgb(255, 255, 255)' }}
+            contentStyle={{ background: experience.period.includes('Present') ? '#e0e7ff' : '#fff' }}
+            contentArrowStyle={{ borderRight: experience.period.includes('Present') ? '7px solidrgb(0, 0, 0)' : '7px solid #fff' }}
             date={experience.period}
-            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+            iconStyle={{ background: '#fff', color: '#222', border: '2px solid #222' }}
             icon={
               <div className="icon-image-container">
-                <img src={getImagePath(experience.image)} alt="myLogo" className="icon-image" />
+                <img src={getImagePath(experience)} alt="employment-icon" className="icon-image" />
               </div>
             }
             onTimelineElementClick={() => openModal(experience)}
@@ -141,22 +128,16 @@ const Experience = () => {
                   {selectedExperience?.role}
                 </Dialog.Title>
                 <div className="mt-4">
-                  {selectedExperience?.longDescription.split('.').map((sentence, index) => (
-                    <div key={index} className="flex items-start mb-2">
-                      <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span>
-                      <p className="text-sm text-gray-700">
-                        {sentence.trim().split('**').map((part, i) =>
-                          i % 2 === 0 ? (
-                            part
-                          ) : (
-                            <span key={i} className="font-bold">
-                              {part.replace(/\*\*/g, '')}
-                            </span>
-                          )
-                        )}
-                      </p>
-                    </div>
-                  ))}
+                  {selectedExperience?.longDescription
+                    .split('.')
+                    .map(sentence => sentence.trim())
+                    .filter(sentence => sentence.length > 0)
+                    .map((sentence, index) => (
+                      <div key={index} className="flex items-start mb-2">
+                        <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span>
+                        <p className="text-sm text-gray-700">{sentence}.</p>
+                      </div>
+                    ))}
                 </div>
 
                 <div className="mt-4">

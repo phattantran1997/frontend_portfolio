@@ -40,11 +40,11 @@ const SquareBlock = ({ image, frontText, description }) => {
 
 const Interests = () => {
   const blocks = [
-    { image: cooking, frontText: 'Cooking', description: 'I love cooking and experimenting with new recipes.' },
-    { image: music, frontText: 'Music', description: 'Listening to music and playing instruments is my passion.' },
-    { image: reading, frontText: 'Reading', description: 'I enjoy reading books and gaining knowledge.' },
-    { image: trip, frontText: 'Traveling', description: 'Exploring new places and cultures is my hobby.' },
-    { image: gym, frontText: 'Working Out', description: 'Staying fit and healthy is important to me.' },
+    { image: cooking, frontText: 'Cooking', description: 'Creative cooking and experimenting with new recipes' },
+    { image: music, frontText: 'Music', description: 'Meditation music and Pop music' },
+    { image: reading, frontText: 'Reading', description: 'Completed 5 books in 2024' },
+    { image: trip, frontText: 'Traveling', description: 'Over 30 cities in Vietnam and 3 countries' },
+    { image: gym, frontText: 'Gym', description: '4 days a week' },
   ];
 
   return (

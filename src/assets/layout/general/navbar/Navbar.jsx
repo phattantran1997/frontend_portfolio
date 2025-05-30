@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="nav-items container">
           <div className="logo">
             <a href="/">
-              <h1>Tan Phat (Lincoln){"'"}s Portfolio</h1>
+              <h1>Lincoln{"'"}s Tran 🌸 </h1>
             </a>
           </div>
           <div className="navbar-toggle" onClick={toggleMenu}>

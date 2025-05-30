@@ -1,0 +1,82 @@
+{
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Sessional Practical Teaching",
+        "nameOfCompany": "QUT",
+        "period": "Feb 2025 – Present",
+        "type": "work",
+        "image": "workIcon",
+        "highlightSkills": "React, JavaScript, Express.js, MongoDB, Tailwind CSS",
+        "shortDescription": "Teaching web development and providing hands-on support",
+        "longDescription": "Facilitating practical sessions for IFN666 Web Application Development, guiding students in building full-stack web applications. Assisting with HTML, CSS, JavaScript, and React frameworks to ensure students grasp front-end and back-end development concepts. Providing hands-on support with databases, authentication, and API integration in web applications. Reviewing student code, offering debugging assistance, and promoting best practices in web development."
+      },
+      {
+        "id": 2,
+        "role": "Research Engineering",
+        "nameOfCompany": "QUT",
+        "period": "Sep 2024 – Jan 2025",
+        "type": "work",
+        "image": "workIcon",
+        "highlightSkills": "Computer Vision, YOLO, Python",
+        "shortDescription": "Computer vision platform development for accessibility",
+        "longDescription": "Designed and developed a computer vision platform that enhances accessibility for deaf individuals, leveraging advanced object detection techniques. Led the manual annotation of datasets and re-trained the YOLO model with new dataset, thus lead to achieving significant improvements in detection accuracy with custom layer extensions. Collaborated with a professor at QUT on integrating emergency technology into university projects."
+      },
+      {
+        "id": 3,
+        "role": "Project Engineer",
+        "nameOfCompany": "Premier Ducts",
+        "period": "Dec 2023 – Sep 2024",
+        "type": "work",
+        "image": "premierductsLogo",
+        "highlightSkills": "Odoo, Agile/Scrum, Business Analysis",
+        "shortDescription": "Business analysis and process improvement",
+        "longDescription": "Conducted business analysis to enhance operational efficiency, spearheading the Odoo integration for enterprise management. Developed an enhanced add-in library for Camduct by improving the debugging feature, streamlining the development process. Applied new agile/scrum procedures in the workplace by clearly defining role distributions and successfully delivering products on time."
+      },
+      {
+        "id": 4,
+        "role": "Software Engineer",
+        "nameOfCompany": "Premier Ducts",
+        "period": "Jan 2022 – Dec 2023",
+        "type": "work",
+        "image": "premierductsLogo",
+        "highlightSkills": "Angular, Mobile Development, Database Optimization",
+        "shortDescription": "Full-stack development and automation",
+        "longDescription": "Developed a QR code scanning mobile application, reducing labor costs and time by 20%, significantly increasing operational efficiency. Developed Angular dashboards for monitoring real-time executive data, supporting better decision-making in manufacturing. Developed an add-in library to automate data extraction from Camduct and push it directly to the dashboard, eliminating manual data entry and improving workflow efficiency. Optimized complex database queries, improving both execution time and speed by implementing new stored procedures and transactions. Created a cron-job tool that summarizes daily reports from raw data and automatically sends them to the management team, reducing manual tasks."
+      },
+      {
+        "id": 5,
+        "role": "Software Engineer",
+        "nameOfCompany": "FPT Software",
+        "period": "Dec 2022 – Jun 2023",
+        "type": "work",
+        "image": "database",
+        "highlightSkills": "API Optimization, Performance Testing",
+        "shortDescription": "Backend optimization and system documentation",
+        "longDescription": "Enhanced APIs to improve performance by 15%, optimizing execution time through new indexed tables and stored procedure improvements, boosting Dashboard reporting speed. Established comprehensive performance benchmarks and authored detailed system specifications, ensuring the scalability and reliability of backend systems. Conducted extensive unit testing, identifying and resolving key issues to ensure the delivery of high-quality, robust backend components."
+      },
+      {
+        "id": 6,
+        "role": "Backend Developer",
+        "nameOfCompany": "Beowulf Blockchain",
+        "period": "Sept 2020 – Sept 2021",
+        "type": "work",
+        "image": "database",
+        "highlightSkills": "Blockchain, Cloud Migration, Security",
+        "shortDescription": "High-performance backend development",
+        "longDescription": "Engineered a high-performance backend framework to support thousands of concurrent users, ensuring system reliability and minimal downtime. Analyzed and optimized database configurations, improving system efficiency and reducing response times by 30%. Integrated third-party access control systems to safeguard sensitive data, implementing robust authorization protocols to ensure security compliance. Led cloud infrastructure migration, with CI/CD achieving substantial performance gains while enabling seamless payment solutions and enhancing user experience."
+      },
+      {
+        "id": 7,
+        "role": "Software Engineer",
+        "nameOfCompany": "1C Innovation",
+        "period": "Jun 2019 – Aug 2020",
+        "type": "work",
+        "image": "erp",
+        "highlightSkills": "ERP, Technical Specification, Client Relations",
+        "shortDescription": "ERP development and client solutions",
+        "longDescription": "Translated user requirements into effective software solutions, producing detailed technical specifications to guide development and ensure alignment with client needs. Designed and delivered ERP applications by integrating multiple frameworks, improving system functionality and enhancing user experience. Ensured timely delivery of high-quality products, fostering customer satisfaction and building long-term business relationships."
+      }
+    ]
+  }
+  

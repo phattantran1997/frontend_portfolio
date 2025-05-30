@@ -1,10 +1,8 @@
 import avatar from "./images/avatar2.png";
-import avatar_dots from "./images/avatar_dots.png";
-import avatar_logo from "./images/avatar_logo.png";
 import quote from "./images/test.jpeg";
 import "./about.scss";
 import { NavLink } from "react-router-dom";
-import resume from './images/Lincoln_Tran_Resume.pdf'; // Import your PDF file here
+import resume from './resume/Lincoln-Resume.pdf';
 
 
 const ShortBrief = () => {
