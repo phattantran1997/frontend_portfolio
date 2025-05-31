@@ -1,5 +1,4 @@
-@import "/src/scss/variable";
-
+@use "/src/scss/variable" as *;
 .title_main {
   font-size: $font-md;
   font-weight: 600;

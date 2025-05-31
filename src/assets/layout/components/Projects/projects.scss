@@ -1,5 +1,5 @@
-@import "/src/scss/variable";
-@import "/src/scss/general";
+@use "/src/scss/variable" as *;
+@use "/src/scss/general" as *;
 
 .project {
   .search-container {
