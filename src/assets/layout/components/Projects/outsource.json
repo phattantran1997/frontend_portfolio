@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Save Here",
+    "github": "https://github.com/gudarzi/SaveHere",
+    "description": "SaveHere uses .Net Core with Blazor",
+    "image": "https://github.com/user-attachments/assets/3469dbda-700f-4c4c-9682-420bb6905059"
+  },
+  {
+    "id": 2,
+    "name": "Lewee",
+    "github": "https://github.com/TheMagnificent11/lewee",
+    "description": "Lewee is an opinionated set of packages to assist with setting up a domain-driven design architecture within ASP.Net.",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "ASX Trading Signal",
+    "github": "https://github.com/OreFox/Group33_QUT",
+    "description": "A comprehensive trading platform for ASX (Australian Securities Exchange) stocks, featuring real-time predictions, performance analytics, and portfolio management",
+    "image": "https://media.licdn.com/dms/image/v2/D5622AQESRLtuG-uJwQ/feedshare-shrink_2048_1536/B56ZcaAh76GoAo-/0/1748488037093?e=1751500800&v=beta&t=T9zHxLMq14B-skK7h0d1FjEWComSvV4Lya8m-RVZa8A"
+  }
+]

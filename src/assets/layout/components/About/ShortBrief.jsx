@@ -19,7 +19,7 @@ const ShortBrief = () => {
                   <span className="title">Software Engineer</span>
                 </h3>
                 <p className="title_item">
-                Meticulous Software Engineer with more 3 years of experience designing, testing, and developing software solutions. In- depth understanding of software architect technologies focusing on delivering innovative business solutions. Excels in fast-paced, high-energy and deadline-driven environments with a willingness to take on additional tasks.
+                Accomplished Full-Stack Software Engineer with over 4 years of experience designing, building, and optimizing innovative business solutions. Expert in modern software architecture and passionate about delivering high-impact results in fast-paced, deadline-driven environments. Renowned for adaptability, technical depth, and a proactive approach to tackling complex challenges.
                 </p>
                 <NavLink to="/contact" className="btn_style">
                   Contact me!!

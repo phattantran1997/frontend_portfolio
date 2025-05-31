@@ -107,6 +107,18 @@ const highlightLocations = [
         description: "Kien Giang, Vietnam"
     },
     {
+        latlong: [21.481111, 105.851111],
+        description: "Hà Giang, Việt Nam"
+    },
+    {
+        latlong: [-33.8688, 151.2093],
+        description: "Sydney, Australia"
+    },
+    {
+        latlong: [-35.2809, 149.1300],
+        description: "Canberra, Australia (Capital)"
+    },
+    {
         latlong: [13.736717, 100.523186],
         description: "Bangkok, Thailand"
     },
@@ -117,32 +129,36 @@ const highlightLocations = [
     {
         latlong: [10.2891, 103.9840],
         description: "Bangkok, Thailand"
-    }
+    },
+    {
+        latlong: [-27.470125, 153.021072],
+        description: "Brisbane, Australia"
+    },
 ]
 
 
 const About = () => {
-    const [posts, setPosts] = useState([]);
-    const accessToken = import.meta.env.VITE_INSTAGRAM_ACCESS_TOKEN;
+    // const [posts, setPosts] = useState([]);
+    // const accessToken = import.meta.env.VITE_INSTAGRAM_ACCESS_TOKEN;
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,username,timestamp,caption&access_token=${accessToken}`);
-                setPosts(response.data.data);
-            } catch (error) {
-                console.error('Error fetching posts:', error.message);
-                toast.error('Error fetching posts ' + error.message);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchPosts = async () => {
+    //         try {
+    //             const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,username,timestamp,caption&access_token=${accessToken}`);
+    //             setPosts(response.data.data);
+    //         } catch (error) {
+    //             console.error('Error fetching posts:', error.message);
+    //             toast.error('Error fetching posts ' + error.message);
+    //         }
+    //     };
 
-        fetchPosts();
-    }, [accessToken]);
-    const [showFullCaption, setShowFullCaption] = useState(true);
+    //     fetchPosts();
+    // }, [accessToken]);
+    // const [showFullCaption, setShowFullCaption] = useState(true);
 
-    const toggleCaption = () => {
-        setShowFullCaption(prev => !prev);
-    };
+    // const toggleCaption = () => {
+    //     setShowFullCaption(prev => !prev);
+    // };
     return (
         <div className="pt-20">
             <div className="container mx-auto">
@@ -160,7 +176,7 @@ const About = () => {
                     </p>
                 </section>
                 {/* Instagram blog Section */}
-                <section className="mb-20">
+                {/* <section className="mb-20">
                     <div className="title_header flex items-center">
                         <h2 className="text-3xl font-bold mb-4">
                             My Instagram Daily Posts
@@ -211,7 +227,7 @@ const About = () => {
                             ))}
                         </div>
                     </div>
-                </section>
+                </section> */}
                 {/* Travel Section */}
                 <section className="mb-20">
                     <div className="title_header flex items-center">

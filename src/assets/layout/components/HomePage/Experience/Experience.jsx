@@ -12,7 +12,6 @@ import erpIcon from './images/employments/erp.png';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import experienceData from './experience.json';
-
 const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
@@ -36,9 +35,6 @@ const Experience = () => {
         return null;
     }
   };
-  useEffect(() => {
-    fetchExperiences();
-  }, []);
 
   const openModal = (experience) => {
     setSelectedExperience(experience);
@@ -154,7 +150,6 @@ const Experience = () => {
           </div>
         </Dialog>
       </Transition>
-      <ToastContainer /> 
     </div>
   );
 };

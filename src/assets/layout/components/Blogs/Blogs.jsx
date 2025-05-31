@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Post.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Blogs = () => {
   const [pages, setPages] = useState([]);
@@ -16,7 +18,6 @@ const Blogs = () => {
         const data = await response.json();
         setPages(data);
         setLoading(false);
-        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
@@ -27,9 +28,7 @@ const Blogs = () => {
 
   return (
     <div className="container pt-20">
-    <div className="container pt-20">
       <h2 className="title_header text-3xl font-bold mb-4">My Notion Blogs</h2>
-      {loading && <p className="loading">Loading...</p>}
       {loading && <p className="loading">Loading...</p>}
       {!loading && (
         <ul className="post-list">
@@ -53,11 +52,10 @@ const Blogs = () => {
             </li>
           ))}
         </ul>
-        </ul>
       )}
       <ToastContainer />
     </div>
   );
 };
 
-export default Post;
+export default Blogs;

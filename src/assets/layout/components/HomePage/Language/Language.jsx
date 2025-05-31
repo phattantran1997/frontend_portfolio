@@ -1,4 +1,3 @@
-import React from 'react';
 import './Language.scss';
 
 const Language = () => {
@@ -22,17 +21,17 @@ const Language = () => {
             ))}
           </div>
         </div>
-        <div className="language">
+        <div className="language" title="PTE 69">
           <div className="languageTitleAndLevel">
             <span className="languageTitle">English</span>
             <br />
             <span className="languageLevel">Professional working proficiency</span>
           </div>
           <div className="dots-progress">
-            {[...Array(7)].map((_, index) => (
+            {[...Array(8)].map((_, index) => (
               <div key={index} className="dots-progress-dot dots-progress-dot-active"></div>
             ))}
-            {[...Array(3)].map((_, index) => (
+            {[...Array(2)].map((_, index) => (
               <div key={index} className="dots-progress-dot"></div>
             ))}
           </div>
@@ -40,21 +39,6 @@ const Language = () => {
         <div className="language">
           <div className="languageTitleAndLevel">
             <span className="languageTitle">Chinese</span>
-            <br />
-            <span className="languageLevel">Beginner</span>
-          </div>
-          <div className="dots-progress">
-            {[...Array(2)].map((_, index) => (
-              <div key={index} className="dots-progress-dot dots-progress-dot-active"></div>
-            ))}
-            {[...Array(8)].map((_, index) => (
-              <div key={index} className="dots-progress-dot"></div>
-            ))}
-          </div>
-        </div>
-        <div className="language">
-          <div className="languageTitleAndLevel">
-            <span className="languageTitle">Korean</span>
             <br />
             <span className="languageLevel">Beginner</span>
           </div>
