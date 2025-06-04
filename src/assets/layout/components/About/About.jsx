@@ -1,12 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import L from 'leaflet';
+
+// Create custom icon
+const locationIcon = L.divIcon({
+    className: 'custom-icon',
+    html: `<div style="color:rgba(118, 114, 196, 0.98); font-size: 24px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 24px; height: 24px; fill: currentColor;">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+        </svg>
+    </div>`,
+    iconSize: [24, 24],
+    iconAnchor: [12, 24]
+});
+
 const highlightLocations = [
     {
         latlong: [11.317672897338083, 106.09275270467124],
@@ -169,7 +181,7 @@ const About = () => {
                         <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> My name is <span className="font-bold">Lincoln Tran</span>, and I was born on <span className="font-bold">September 7th, 1997</span> in <span className="font-bold">Vietnam</span>, where I spent my formative years and received my education. From a young age, I developed a keen interest in technology and problem-solving, which eventually led me to pursue a career as a <span className="font-bold">Software Engineer</span>.
                     </p>
                     <p>
-                        <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> With more than <span className="font-bold">3 years of experience</span> designing, testing, and developing software solutions, I've honed my skills in delivering innovative business solutions. My <span className="font-bold">in-depth understanding of software architecture technologies</span> allows me to tackle complex challenges and provide effective solutions.
+                        <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> With more than <span className="font-bold">4 years of experience</span> designing, testing, and developing software solutions, I've honed my skills in delivering innovative business solutions. My <span className="font-bold">in-depth understanding of software architecture technologies</span> allows me to tackle complex challenges and provide effective solutions.
                     </p>
                     <p>
                         <span className="mr-2 text-xl font-bold text-blue-500">&#8226;</span> What sets me apart is my ability to thrive in <span className="font-bold">fast-paced, high-energy, and deadline-driven environments</span>. I'm a <span className="font-bold">meticulous</span> professional who takes pride in my work and is always willing to take on additional tasks to ensure project success. Collaboration and effective communication are key strengths of mine, enabling me to work seamlessly with cross-functional teams.
@@ -250,7 +262,7 @@ const About = () => {
                             />
                             {highlightLocations.map((location) => (
                                 <>
-                                    <Marker position={location.latlong}>
+                                    <Marker position={location.latlong} icon={locationIcon}>
                                         <Popup>
                                             <div>
                                                 <h3>{location.description}</h3>

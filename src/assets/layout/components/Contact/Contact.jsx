@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -26,13 +26,14 @@ const ContactForm = () => {
     // After sending email, set submitted state to true
     setSubmitted(true);
   };
+
   if (!submitted) {
     return (
       <div style={{ paddingTop: "150px" }} className="container flex">
         <div className="w-1/2 pr-4">
           <img
             style={{ width: "75%", height: "75%" }}
-            src="https://herotofu.com/images/question.min.svg"
+            src="https://i.pinimg.com/originals/1c/13/fe/1c13fef08fca46438a9f364bdfa3458d.gif"
             alt="Contact"
             className="w-full h-full"
           />
@@ -40,19 +41,10 @@ const ContactForm = () => {
         <div className="w-1/2 pl-4">
           <div className="mb-4">
             <h2 className="text-2xl font-bold">Get in Touch</h2>
-            <p>
-              <span className="inline-flex items-center">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/1200px-Flag_of_Australia.svg.png"
-                  alt="Australia Flag"
-                  className="w-7 h-5 mr-1"
-                />
-                Phone: +64 578575788
-              </span>
-            </p>
+           
             <p>My email: phattantran123@gmail.com</p>
           </div>
-          <form action="https://public.herotofu.com/v1/fe11d620-f23e-11ee-80b5-8ff215fec458" method="post" accept-charset="UTF-8" >
+          <form action="https://public.herotofu.com/v1/fe11d620-f23e-11ee-80b5-8ff215fec458" method="post" acceptCharset="UTF-8" >
             <div className="pt-0 mb-3">
               <input
                 type="text"
@@ -99,14 +91,12 @@ const ContactForm = () => {
             Thank you!
           </div>
           <div className="text-md">
-            We'll be in touch soon.
+            We&apos;ll be in touch soon.
           </div>
         </div>
       </div>
-
-    )
+    );
   }
-
 };
 
 export default ContactForm;
