@@ -7,8 +7,8 @@ import awsSaa from './images/aws-saa.jpg';
 import awsDva from './images/aws-dva.jpg';
 import qutCertificatesem1 from './images/qut_cert_sem1.jpg';
 import qutCertificatesem2 from './images/qut_cert_sem2.jpg';
-import in17 from './images/in17.jpg';
-import in20 from './images/in20.jpg';
+import in17 from './images/IN17.jpg';
+import in20 from './images/IN20.jpg';
 
 // Local publication data based on images in the images folder
 const publicationData = [
